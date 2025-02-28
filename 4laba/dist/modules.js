@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const labaa4_1 = require("./labaa4");
+const owner = new labaa4_1.Transport.OwnerClass('Сидорова', 'Анна', 'Олеговна', new Date(2000, 3, 13), labaa4_1.Transport.DocumentType.Passport, 'AB', '123456');
+const car = new labaa4_1.Transport.CarClassImpl('Toyota', 'Camry', 2022, 'JTM1234567890ABCDE', 'A123BC', owner, labaa4_1.Transport.CarBodyType.SEDAN, labaa4_1.Transport.CarClass.LUXURY);
+const carStorage = new labaa4_1.Transport.VehicleStorageImpl();
+carStorage.addVehicle(car);
+console.log('All vehicles in car storage:');
+carStorage.getAllVehicles().forEach(vehicle => vehicle.displayVehicleInfo());
+const motorbike = new labaa4_1.Transport.MotorbikeClassImpl('Yamaha', 'YZF-R1', 2023, 'YZF1234567890ABCDE', 'B123CD', owner, labaa4_1.Transport.MotorbikeFrameType.CARBON, true);
+const motorbikeStorage = new labaa4_1.Transport.VehicleStorageImpl();
+motorbikeStorage.addVehicle(motorbike);
+console.log('All vehicles in motorbike storage:');
+motorbikeStorage.getAllVehicles().forEach(vehicle => vehicle.displayVehicleInfo());
